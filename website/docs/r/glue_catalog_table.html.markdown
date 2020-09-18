@@ -1,7 +1,7 @@
 ---
+subcategory: "Glue"
 layout: "aws"
 page_title: "AWS: aws_glue_catalog_table"
-sidebar_current: "docs-aws-resource-glue-catalog-table"
 description: |-
   Provides a Glue Catalog Table.
 ---
@@ -124,7 +124,7 @@ The following arguments are supported:
 * `parameters` - (Optional) A map of initialization parameters for the SerDe, in key-value form.
 * `serialization_library` - (Optional) Usually the class that implements the SerDe. An example is: org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe.
 
-##### sort_column
+##### sort_columns
 
 * `column` - (Required) The name of the column.
 * `sort_order` - (Required) Indicates that the column is sorted in ascending order (== 1), or in descending order (==0).
@@ -133,7 +133,15 @@ The following arguments are supported:
 
 * `skewed_column_names` - (Optional) A list of names of columns that contain skewed values.
 * `skewed_column_value_location_maps` - (Optional) A list of values that appear so frequently as to be considered skewed.
-* `skewed_column_values` - (Optional) A mapping of skewed values to the columns that contain them.
+* `skewed_column_values` - (Optional) A map of skewed values to the columns that contain them.
+
+## Attributes Reference
+
+In addition to all arguments above, the following attributes are exported:
+
+* `id` - Catalog ID, Database name and of the name table.
+* `arn` - The ARN of the Glue Table.
+
 
 ## Import
 
